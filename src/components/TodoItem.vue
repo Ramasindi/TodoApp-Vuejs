@@ -1,7 +1,8 @@
 <template>
     <v-card class="mx-auto my-12" max-width="374">
-        <div class="todo-item" v-bind:class="{'is-complete':todo.completed}">
+        <div class="todo-item" v-bind:class="{'is-complete':todo.completed}" >
             <p>
+                
                 <input type="checkbox" v-on:change="markComplete">
                     {{todo.title}}
                 <v-btn @click="$emit('del-todo',todo.id)" color='red' rounded class="float-right" v-bind:style="{color:'white'}" >x</v-btn>
