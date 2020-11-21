@@ -1,11 +1,13 @@
 <template>
-    <div class="todo-item" v-bind:class="{'is-complete':todo.completed}">
-       <p>
-       <input type="checkbox" v-on:change="markComplete">
-       {{todo.title}}
-       <button @click="$emit('del-todo',todo.id )" class="del">x</button>
-       </p>     
-    </div>
+    <v-card class="mx-auto my-12" max-width="374">
+        <div class="todo-item" v-bind:class="{'is-complete':todo.completed}">
+            <p>
+                <input type="checkbox" v-on:change="markComplete">
+                    {{todo.title}}
+                <v-btn @click="$emit('del-todo',todo.id)" color='red' rounded class="float-right" v-bind:style="{color:'white'}" >x</v-btn>
+            </p>     
+        </div>
+    </v-card>
 </template>
 
 <script>
@@ -17,7 +19,6 @@ export default {
             this.todo.completed = !this.todo.completed;
         }
     }
-
 }
 </script>
 
@@ -33,11 +34,9 @@ export default {
     }
 
     .del {
-        background: #ff0000;
-        color: #fff;
         border:  none;
         padding:  5px 9px;
-        border-radius: 50%;
+        border-radius: 70%;
         cursor: pointer;
         float: right;
 
